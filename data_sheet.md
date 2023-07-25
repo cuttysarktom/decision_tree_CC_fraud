@@ -1,4 +1,4 @@
-# Datasheet Template
+# Datasheet for Credit Card Data used in this project
 
 ## Motivation
 
@@ -34,25 +34,33 @@ Bertrand Lebichot, Gianmarco Paldino, Wissam Siblini, Liyun He, Frederic Oblé, 
  
 ## Composition
 
-- What do the instances that comprise the dataset represent (e.g., documents, photos, people, countries)? 
+- What do the instances that comprise the dataset represent (e.g., documents, photos, people, countries)?
+  
 The instances represent credit card transactions which have undergone PCA transformation to select 28 key variables (labelled V1-V28 for anonymisation reasons), along with the monetary amount, time in seconds since the first transaction, and an outcome variable "Class" which is 1 for fraudulent items and 0 for non-fraudulent.
 
-- How many instances of each type are there? 
+- How many instances of each type are there?
+
 There are 284,807 transactions, of which 492 are fraudulent and the remainder are non-fraudulent.
 - Is there any missing data?
+
 No, the data has already been pre-processed and cleansed so there are no rows with NA values.
+
 - Does the dataset contain data that might be considered confidential (e.g., data that is protected by legal privilege or by    doctor–patient confidentiality, data that includes the content of individuals’ non-public communications)?
+
 The data would be considered confidential if it had not been transformed, but is now fully anonymised, including even the field names (beyond time, amount, and class).
 
 ## Collection process
 
-- How was the data acquired? 
+- How was the data acquired?
+
 The dataset has been collected and analysed during a research collaboration of Worldline and the Machine Learning Group (http://mlg.ulb.ac.be) of ULB (Université Libre de Bruxelles) on big data mining and fraud detection. The method of collection is unknown to the author of this data sheet.
 
-- If the data is a sample of a larger subset, what was the sampling strategy? 
+- If the data is a sample of a larger subset, what was the sampling strategy?
+
 This is not known to the author of this data sheet. 
 
 - Over what time frame was the data collected?
+
 This is not known to the author of this data sheet. 
 
 ## Preprocessing/cleaning/labelling
@@ -67,19 +75,23 @@ This is not known to the author of this datasheet.
  
 ## Uses
 
-- What other tasks could the dataset be used for? 
+- What other tasks could the dataset be used for?
+
 The dataset is an anonymised credit card dataset. Based on the information available, it could potentially be used to predict the amount of transactions, but the primary purpose is in identification of fraud. 
 
-- Is there anything about the composition of the dataset or the way it was collected and preprocessed/cleaned/labeled that might impact future uses? For example, is there anything that a dataset consumer might need to know to avoid uses that could result in unfair treatment of individuals or groups (e.g., stereotyping, quality of service issues) or other risks or harms (e.g., legal risks, financial harms)? If so, please provide a description. Is there anything a dataset consumer could do to mitigate these risks or harms? 
-It is unknown if any of the fields in the data could lead to unfair treatment as they are anonymised and even the field names changed to V1-V28. However, because of this, the data will not be used beyond building and testing models (given it would not be possible without knowledge from the original collectors and processors) to take new data and classify it using the model built on this dataset.
+- Is there anything about the composition of the dataset or the way it was collected and preprocessed/cleaned/labeled that might impact future uses? For example, is there anything that a dataset consumer might need to know to avoid uses that could result in unfair treatment of individuals or groups (e.g., stereotyping, quality of service issues) or other risks or harms (e.g., legal risks, financial harms)? If so, please provide a description. Is there anything a dataset consumer could do to mitigate these risks or harms?
+
+It is unknown to the author of this data sheet if any of the fields in the data could lead to unfair treatment as they are anonymised and even the field names changed to V1-V28. However, because of this, the data will not be used beyond building and testing models (given it would not be possible without knowledge from the original collectors and processors) to take new data and classify it using the model built on this dataset.
 
 - Are there tasks for which the dataset should not be used? If so, please provide a description.
+
 Without having knowledge of the original data collected and transformations applied, this should only be used to build and test potential models on this dataset itself. 
 
 
 ## Distribution
 
-- How has the dataset already been distributed? 
+- How has the dataset already been distributed?
+
 The version of the dataset that I have used is available on Kaggle: https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud
 
 The author of this data sheet is unaware of other distributions.
@@ -93,4 +105,4 @@ The data has an "Open Database" licence which is available for review here: http
 
 - Who maintains the dataset?
 
-It does not appear the dataset is maintained - it was updated 5 years ago and appears to be stationary.
+The data is from a fixed point in time (the Kaggle version was last updated 5 years ago), so it is unlikely to be updated or maintained.
