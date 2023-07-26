@@ -27,6 +27,19 @@ The model is a decision tree which was trained with a maximum of depth of 4 and 
 ## Performance
 Once tuned, the two models were tested on the final 25% of the dataset. This was the most recent transactions, as this best represents the real world problem of fraud detection, where models can be built on historic data but need to identify fraud as transactions occur in real time, or in the case of investigations or audits, models can be built on older data to identify transactions in the most recent ledgers.
 
+Model 1 confusion matrix on test data:
+![Screenshot](Model_1_CM.jpg)
+
+Model 1 had a test precision of 0.924, test recall of 0.649, and F1 score of 0.763
+
+
+Model 2 confusion matrix on test data:
+![Screenshot](Model_2_CM.jpg)
+
+Model 2 had a test precision of 0.885, test recall of 0.734, and F1 score of 0.802
+
+Given the potentially very high cost of false negatives compared to false positives, overall Model 2 appears to have the best generalised performance. Depending on the risk appetite of the user, it may be better to train a more conservative model (for example reduce precision threshold to 70%), as in later data false negative rate may increase due to data drift and new patterns in fraud which the model would not have been trained on.
+
 
 
 ## Limitations
